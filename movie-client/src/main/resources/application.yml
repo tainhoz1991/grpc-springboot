@@ -1,0 +1,5 @@
+grpc:
+  client:
+    movie-controller-server:
+      address: static://localhost:8084
+      negotiation-type: plaintext
