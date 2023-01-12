@@ -18,6 +18,11 @@
         <module>proto</module>
         <module>grpc-service</module>
         <module>client-server</module>
+        <module>moviecontroller-service</module>
+		<module>moviestore-service</module>
+        <module>recommender-service</module>
+		<module>userpreference-service</module>
+        <module>movie-client</module>
     </modules>
     <properties>
 		<java.version>11</java.version>
