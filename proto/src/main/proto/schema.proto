@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.schema;
+
+option java_multiple_files = true;
+//option java_package = "";
+//option java_outer_classname = "";
+
+message Book {
+  int32 book_id = 1;
+  string title = 2;
+  float price = 3;
+  int32 page = 4;
+  int32 author_id = 5;
+}
+
+message Author {
+  int32 author_id = 1;
+  string first_name = 2;
+  string last_name = 3;
+  string gender = 4;
+  int32 book_id = 5;
+}
+
+service BookAuthorService {
+
+  //unary - synchronous
+  rpc getAuthor(Author) returns (Author){}
+
+  //asynchronous
+  rpc getBooksByAuthor(Author) returns (stream Book){}
+
+  rpc getExpensiveBook(stream Book) returns (Book){}
+
+  rpc getBooksByAuthorGender(stream Book) returns (stream Book){}
+}
